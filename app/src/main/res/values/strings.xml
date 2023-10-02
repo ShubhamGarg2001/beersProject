@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Digimantra</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="retry_now">Retry\n Something Went Wrong !!</string>
+</resources>
