@@ -1,7 +1,6 @@
 package com.example.digimantra.di
 
 import com.example.digimantra.data.BeerApi
-import com.example.digimantra.utils.AppConstants
 import com.example.digimantra.utils.AppConstants.BASE_URL
 import dagger.Module
 import dagger.Provides

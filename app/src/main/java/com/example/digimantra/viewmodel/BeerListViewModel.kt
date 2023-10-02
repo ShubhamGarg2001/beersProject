@@ -5,13 +5,11 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
 import com.example.digimantra.data.BeerPagingRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class BeerListViewModel @Inject constructor(
-    private val beerPagingRepository: BeerPagingRepository
+    beerPagingRepository: BeerPagingRepository
 ) : ViewModel() {
 
     /*
