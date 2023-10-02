@@ -26,7 +26,7 @@ class BeerPagingSource(private val beerApi: BeerApi) : PagingSource<Int, Beer>()
             val page = params.key ?: 1
             val response = beerApi.getBeersList(page, PAGE_SIZE)
             if (response.isSuccessful) {
-                val beersList = beerApi.getBeersList(page, PAGE_SIZE).body() ?: listOf()
+                val beersList = response.body() ?: listOf()
                 LoadResult.Page(
                     data = beersList,
                     prevKey = if (page == 1) null else page - 1,
