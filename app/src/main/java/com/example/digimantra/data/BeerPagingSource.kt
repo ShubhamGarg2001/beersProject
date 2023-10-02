@@ -32,10 +32,7 @@ class BeerPagingSource(private val beerApi: BeerApi) : PagingSource<Int, Beer>()
                     prevKey = if (page == 1) null else page - 1,
                     nextKey = if (beersList.isEmpty()) null else page + 1
                 )
-            } else
-                LoadResult.Error(Throwable(response.errorBody()?.string()))
-
-
+            } else LoadResult.Error(Throwable(response.errorBody()?.string()))
         } catch (e: Exception) {
             LoadResult.Error(e)
         }

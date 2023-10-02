@@ -29,11 +29,16 @@ object ApiModule {
 
     @Provides
     @Singleton
-    fun getBeerApi(baseUrl: String, converterFactory: Converter.Factory): BeerApi {
+    fun provideRetrofit(baseUrl: String, converterFactory: Converter.Factory): Retrofit {
         return Retrofit.Builder()
-            .addConverterFactory(converterFactory)
             .baseUrl(baseUrl)
+            .addConverterFactory(converterFactory)
             .build()
-            .create(BeerApi::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideBeerApi(retrofit: Retrofit): BeerApi {
+        return retrofit.create(BeerApi::class.java)
     }
 }
